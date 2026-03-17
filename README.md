@@ -20,6 +20,22 @@ python3 -m venv env
 source ./env/bin/activate
 pip install -r requirements.txt
 ```
+
+#### Write Your Prediction Logic
+In march-madness.py, the function predict_matchup determines which teams will win and lose. By default, it picks the higher seed as a demo, but this can be made much better using the data from kaggle.
+```python
+def predict_matchup(team1: Team, team2: Team):
+    """Returns True if team 1 wins, false if team 2 wins"""
+    ### ADD TOURNAMENT PREDICTION LOGIC BELOW
+
+    # e.g.: always predict the higher (better) seeded team to win
+    if team1.seed <= team2.seed:
+        return True
+    return False
+
+    ### END TOURNAMENT PREDICTION LOGIC
+```
+
 #### Run a tournament simulation
 ```bash
 python3 march-madness.py
@@ -31,7 +47,7 @@ Once you're satisfied with the bracket your program generates, it can be submitt
 ```bash
 python3 submit-predictions.py
 ```
-***Important: Only do this when ready as it will be a bit annoying to delete***
+***Important: Only run the submit script when ready as it will probably be a bit annoying to delete***
 
 ### Done!
 View the bracket competition [here](https://www.wcooley.net/march-madness) - with live updates!!
