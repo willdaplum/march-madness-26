@@ -64,14 +64,14 @@ def create_bracket():
 
 def predict_matchup(team1: Team, team2: Team):
     """Returns True if team 1 wins, false if team 2 wins"""
-    ### ADD TOURNAMENT PREDICTION LOGIC BELOW
+    ### ADD GAME PREDICTION LOGIC BELOW
 
     # e.g.: always predict the higher (better) seeded team to win
     if team1.seed <= team2.seed:
         return True
     return False
 
-    ### END TOURNAMENT PREDICTION LOGIC
+    ### END GAME PREDICTION LOGIC
 
 
 if __name__ == "__main__":

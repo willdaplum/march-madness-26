@@ -26,14 +26,14 @@ In march-madness.py, the function predict_matchup determines which teams will wi
 ```python
 def predict_matchup(team1: Team, team2: Team):
     """Returns True if team 1 wins, false if team 2 wins"""
-    ### ADD TOURNAMENT PREDICTION LOGIC BELOW
+    ### ADD GAME PREDICTION LOGIC BELOW
 
     # e.g.: always predict the higher (better) seeded team to win
     if team1.seed <= team2.seed:
         return True
     return False
 
-    ### END TOURNAMENT PREDICTION LOGIC
+    ### END GAME PREDICTION LOGIC
 ```
 
 #### Run a tournament simulation
@@ -47,7 +47,7 @@ Once you're satisfied with the bracket your program generates, it can be submitt
 ```bash
 python3 submit-predictions.py
 ```
-***Important: Only run the submit script when ready as it will probably be a bit annoying to delete***
+***Important:*** Change the *name* field of the *payload* object in submit-predictions.py to your bracket name
 
 ### Done!
 View the bracket competition [here](https://www.wcooley.net/march-madness) - with live updates!!
