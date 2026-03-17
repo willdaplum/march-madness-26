@@ -1,5 +1,5 @@
 # march-madness-26
-Predict the 2026 March Madness tournament using code!
+Predict the 2026 March Madness tournament using code! Go Blue and Go Cats :)
 
 ### Getting Started
 
