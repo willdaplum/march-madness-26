@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import json
 
 
 SEED_LOCATIONS = {
@@ -76,18 +77,24 @@ def predict_matchup(team1: Team, team2: Team):
 if __name__ == "__main__":
     bracket = create_bracket()
     
-    # simulate each game
+    # simulate the games using predict_matchup function
+    game_id = 0
+    game_results_json = []
     while len(bracket) > 1:
         team1_wins = predict_matchup(bracket[0], bracket[1])
         if(team1_wins):
             bracket.append(bracket[0])
+            game_results_json.append({'winner': bracket[0].name, 'loser': bracket[1].name, 'game_id': game_id})
             print("{} d. {}".format(bracket[0].name, bracket[1].name))
         else:
             bracket.append(bracket[1])
+            game_results_json.append({'winner': bracket[0].name, 'loser': bracket[1].name, 'game_id': game_id})
             print("{} d. {}".format(bracket[0].name, bracket[1].name))
         bracket = bracket[2:]
-            
+        game_id += 1
     print("Champion: {}".format(bracket[0].name))
-            
-        
-    # write results to json
+    
+    # write results to json file
+    json_str = json.dumps(game_results_json, indent=4)
+    with open("simulation_results.json", "w") as f:
+        f.write(json_str)
