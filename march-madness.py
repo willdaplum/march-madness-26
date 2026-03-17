@@ -62,6 +62,9 @@ def create_bracket():
     return bracket
 
 
+# def get_team_statistics(teamId):
+#     season_stats_df = pd.read_csv("data/MNCAATourneyDetailedResults").loc[]
+
 def predict_matchup(team1: Team, team2: Team):
     """Returns True if team 1 wins, false if team 2 wins"""
     ### ADD GAME PREDICTION LOGIC BELOW
@@ -84,12 +87,11 @@ if __name__ == "__main__":
         team1_wins = predict_matchup(bracket[0], bracket[1])
         if(team1_wins):
             bracket.append(bracket[0])
-            game_results_json.append({'winner': bracket[0].name, 'loser': bracket[1].name, 'game_id': game_id})
             print("{} d. {}".format(bracket[0].name, bracket[1].name))
         else:
             bracket.append(bracket[1])
-            game_results_json.append({'winner': bracket[0].name, 'loser': bracket[1].name, 'game_id': game_id})
-            print("{} d. {}".format(bracket[0].name, bracket[1].name))
+            print("{} d. {}".format(bracket[1].name, bracket[0].name))
+        game_results_json.append([bracket[0].name, bracket[1].name])
         bracket = bracket[2:]
         game_id += 1
     print("Champion: {}".format(bracket[0].name))

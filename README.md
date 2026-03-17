@@ -43,11 +43,11 @@ python3 march-madness.py
 This writes (or overwrites) the file *simulation_results.json*, containing the program's tournament predictions in machine readable format.
 
 #### Submitting Predictions
-Once you're satisfied with the bracket your program generates, it can be submitted by running
+Once you're satisfied with the bracket your program generates, it can be submitted by running (Change <Bracket_Name> to your bracket name)
 ```bash
-python3 submit-predictions.py
+python3 submit-predictions.py <Bracket_Name>
 ```
-***Important:*** Change the *name* field of the *payload* object in submit-predictions.py to your bracket name
+***Important:*** Submitting a bracket with the same *name* field will overwrite the previously submitted bracket.
 
 ### Done!
 View the bracket competition [here](https://www.wcooley.net/march-madness) - with live updates!!
