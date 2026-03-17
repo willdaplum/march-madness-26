@@ -1,4 +1,5 @@
 # march-madness-26
+Predict the 2026 March Madness tournament using code!
 
 ### Getting Started
 
