@@ -91,7 +91,7 @@ if __name__ == "__main__":
         else:
             bracket.append(bracket[1])
             print("{} d. {}".format(bracket[1].name, bracket[0].name))
-        game_results_json.append([bracket[0].name, bracket[1].name])
+        game_results_json.append([{"name": bracket[0].name}, {"name": bracket[1].name}])
         bracket = bracket[2:]
         game_id += 1
     print("Champion: {}".format(bracket[0].name))
